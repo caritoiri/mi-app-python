@@ -1,8 +1,8 @@
-name: Test en Self-hosted
+name: Test Self-hosted Runner
 
 on:
   push:
-    branches: [develop]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
