@@ -27,7 +27,12 @@ jobs:
   
   check-app:
     runs-on: [self-hosted]
+    needs: deployment
     steps:
     - name: Chequear estado
       run: |
-        curl http://localhost:5000/health && echo "✅ App OK" || echo "❌ App caída"
+        curl -f http://localhost:500/health && echo "✅ App OK" || echo "❌ App caída"
+    
+    - name: Logs de servicios (Si falla)
+      if: failure()
+      run: docker compose logs --tail=50
