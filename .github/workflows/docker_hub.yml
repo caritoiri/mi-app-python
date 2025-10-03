@@ -9,7 +9,7 @@ on:
 env:
   REGISTRY: docker.io
   # IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.repository }}  # <--- importante
-  IMAGE_NAME: joseco/${{ github.repository }}
+  IMAGE_NAME: joseco/mi-app-python
 
 jobs:
   build-and-push:
